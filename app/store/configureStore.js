@@ -29,7 +29,7 @@ export default function configureStore() {
   };
 
   // global sagas
-  store.runSaga(UserAuthSagas);
+  // store.runSaga(SomeSage);
 
   // global subscribers, updates localStorage
   subscribeStore(store);
