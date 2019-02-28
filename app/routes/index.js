@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 const Routes = (/*store*/) => (
   <Switch>
-    <Route path="/" render={() => { }} exact />
+    <Route path="/" render={() => <h1>Hello World</h1>} exact />
   </Switch>
 );
 
