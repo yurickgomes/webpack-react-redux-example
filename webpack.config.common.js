@@ -1,9 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const PATH_ROOT = path.resolve('.');
 const PATH_SOURCE = path.resolve('app');
 const PATH_BUILD = path.resolve('build');
 const PATH_INDEX_HTML = path.resolve(PATH_SOURCE, 'index.html');
@@ -11,8 +10,6 @@ const PATH_IMAGES = path.resolve(PATH_SOURCE, 'images');
 const PATH_STYLES = path.resolve(PATH_SOURCE, 'styles');
 const PATH_PROVIDERS = path.resolve(PATH_SOURCE, 'providers')
 const NODE_ENV = process.env.NODE_ENV || 'development'
-const cleanOptions = { root: PATH_ROOT };
-const cleanPaths = [PATH_BUILD];
 
 module.exports = {
   entry: path.join(PATH_SOURCE, 'main.js'),
@@ -52,7 +49,7 @@ module.exports = {
       'process.env': { NODE_ENV: JSON.stringify(NODE_ENV) },
     }),
     // Clears old stuff
-    new CleanWebpackPlugin(cleanPaths, cleanOptions),
+    new CleanWebpackPlugin(),
     // Builds index.html
     new HtmlWebpackPlugin({
       template: PATH_INDEX_HTML,

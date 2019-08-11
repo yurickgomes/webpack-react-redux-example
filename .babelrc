@@ -1,12 +1,13 @@
 {
   "presets": [
     ["@babel/env", {
-      "useBuiltIns": "entry"
-    }],
-    "@babel/react"
-  ],
-  "plugins": [
-    "@babel/transform-runtime",
-    "@babel/plugin-proposal-class-properties"
-  ]
-}
+      "useBuiltIns": "entry",
+      "corejs": { "version": "3.2" }
+      }],
+      "@babel/react"
+    ],
+    "plugins": [
+      "@babel/transform-runtime",
+      ["@babel/plugin-proposal-class-properties", { "corejs": 3 }]
+    ],
+  }
